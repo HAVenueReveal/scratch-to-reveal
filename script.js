@@ -8,7 +8,7 @@ if (brushRadius < 50) { brushRadius = 50 }
 img.onload = function(){  
 	bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
 }
-img.loc = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/';
+img.loc = 'https://github.com/HAVenueReveal/scratch-to-reveal/blob/main/ReceptionCover.png';
 img.filename = 'calgary-bridge-2013.jpg';
 if (window.devicePixelRatio >= 2) {
 	var nameParts = img.filename.split('.');
