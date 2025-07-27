@@ -8,14 +8,7 @@ if (brushRadius < 50) { brushRadius = 50 }
 img.onload = function(){  
 	bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
 }
-img.loc = 'https://github.com/HAVenueReveal/scratch-to-reveal/blob/main/';
-img.filename = 'ReceptionCover.png';
-if (window.devicePixelRatio >= 2) {
-	var nameParts = img.filename.split('.');
-	img.src = img.loc + nameParts[0]+"-2x"+"."+nameParts[1];
-} else {
-	img.src = img.loc + img.filename;
-}
+img.src = 'https://github.com/HAVenueReveal/scratch-to-reveal/blob/main/ReceptionCover.png';
 
 function detectLeftButton(event) {
     if ('buttons' in event) {
