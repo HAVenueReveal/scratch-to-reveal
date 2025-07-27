@@ -9,7 +9,7 @@ img.onload = function(){
 	bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
 }
 img.loc = 'https://github.com/HAVenueReveal/scratch-to-reveal/blob/main/ReceptionCover.png';
-img.filename = 'calgary-bridge-2013.jpg';
+img.filename = 'https://github.com/HAVenueReveal/scratch-to-reveal/blob/main/ReceptionCover.png';
 if (window.devicePixelRatio >= 2) {
 	var nameParts = img.filename.split('.');
 	img.src = img.loc + nameParts[0]+"-2x"+"."+nameParts[1];
