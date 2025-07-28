@@ -11,6 +11,9 @@ function isLeftClick(event) {
 class VenueReveal {
     constructor(previewImg, bkgdImg, height, width, caption) {
         const self = this;
+
+        this.ready = false;
+        this.eventId = `e${Math.random()}`;
         
         this.container = document.createElement("figure");
         this.container.className = "venue";
@@ -31,12 +34,14 @@ class VenueReveal {
         // can try changing this brush size
         this.brushRadius = Math.max(50, (this.revealCard.width / 100) * 5);
         
-        const coverImage = new Image();
-        coverImage.src = previewImg;
-        coverImage.onload = function() {  
+        this.coverImage = new Image();
+        this.coverImage.src = previewImg;
+        this.coverImage.addEventListener("load", () => {  
             let bridgeCanvas = self.revealCard.getContext("2d");
-            bridgeCanvas.drawImage(coverImage, 0, 0, self.revealCard.width, self.revealCard.height);
-        }
+            bridgeCanvas.drawImage(self.coverImage, 0, 0, self.revealCard.width, self.revealCard.height);
+            self.ready = true;
+            window.dispatchEvent(new Event(self.eventId));
+        });
 
         this.revealCard.addEventListener("mousemove", function(e) {
             if (isLeftClick(e)) {
@@ -57,9 +62,14 @@ class VenueReveal {
 
     attach(parent) {
         const self = this;
-        this.container.addEventListener("load", () => {
+        if (this.ready) {
             parent.appendChild(self.container);
-        });
+        }
+        else {
+            window.addEventListener(this.eventId, () => {
+                parent.appendChild(self.container);
+            }, false);
+        }
     }
     
     getBrushPos(xRef, yRef) {
