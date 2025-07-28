@@ -20,12 +20,12 @@ class VenueReveal {
         this.revealCard.style.backgroundImage = `url('${bkgdImg}')`;
         this.revealCard.height = height;
         this.revealCard.width = width;
-        this.container.appendChild(revealCard);
+        this.container.appendChild(this.revealCard);
 
         if (caption) {
             this.venueCaption = document.createElement("figcaption");
             this.venueCaption.innerText = caption;
-            this.container.appendChild(venueCaption);
+            this.container.appendChild(this.venueCaption);
         }
 
         // can try changing this brush size
