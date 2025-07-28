@@ -10,6 +10,8 @@ body { margin: 0; }
     /* Probably declared twice to account for backwards compatability fallback */
 	cursor:  crosshair;
 	cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/circular-cursor.png) 53 53, crosshair;
+
+    /* Same deal */
 	background-image: url('FortedeCruzReveal.jpg');
 	background-image: -webkit-image-set(
 		url('FortedeCruzReveal.jpg') 1x, 
