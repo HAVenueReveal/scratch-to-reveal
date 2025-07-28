@@ -79,13 +79,13 @@ class VenueReveal {
 
 const venues = [
     new VenueReveal(
-        "ReceptionCover.png",
+        "SangeetCoverSm.png",
         "ArribaReveal.jpg",
         465, 750,
         "Hansa & Ajit Wedding Venue Reveal - Scratch to find out!"
     ),
     new VenueReveal(
-        "ReceptionCover.png",
+        "CeremonyCoverSm.png",
         "VandelliReveal.jpg",
         465, 750,
         "Test 2"
