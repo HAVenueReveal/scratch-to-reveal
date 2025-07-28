@@ -37,7 +37,7 @@ class VenueReveal {
             if (caption) {
                 let venueCaption = document.createElement("figcaption");
                 venueCaption.innerText = caption;
-                self.container.appendChild(this.venueCaption);
+                self.container.appendChild(venueCaption);
             }
         });
 
