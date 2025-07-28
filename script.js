@@ -56,7 +56,10 @@ class VenueReveal {
     }
 
     attach(parent) {
-        parent.appendChild(this.container);
+        const self = this;
+        this.container.addEventListener("load", () => {
+            parent.appendChild(self.container);
+        });
     }
     
     getBrushPos(xRef, yRef) {
