@@ -35,7 +35,7 @@ class VenueReveal {
         coverImage.src = previewImg;
         coverImage.onload = function() {  
             let bridgeCanvas = self.revealCard.getContext('2d');
-        	bridgeCanvas.drawImage(coverImage, 0, 0, self.revealCard.width, self.revealCard.height);
+            bridgeCanvas.drawImage(coverImage, 0, 0, self.revealCard.width, self.revealCard.height);
         }
 
         this.revealCard.addEventListener('mousemove', function(e) {
