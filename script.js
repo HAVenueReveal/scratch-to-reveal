@@ -8,7 +8,7 @@ if (brushRadius < 50) { brushRadius = 50 }
 img.onload = function(){  
 	bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
 }
-img.src = 'https://github.com/HAVenueReveal/scratch-to-reveal/blob/main/ReceptionCover.png';
+img.src = 'ReceptionCover.png';
 
 function detectLeftButton(event) {
     if ('buttons' in event) {
@@ -22,7 +22,7 @@ function detectLeftButton(event) {
 
 function getBrushPos(xRef, yRef) {
 	var bridgeRect = bridge.getBoundingClientRect();
-    return {
+	return {
 	  x: Math.floor((xRef-bridgeRect.left)/(bridgeRect.right-bridgeRect.left)*bridge.width),
 	  y: Math.floor((yRef-bridgeRect.top)/(bridgeRect.bottom-bridgeRect.top)*bridge.height)
     };
