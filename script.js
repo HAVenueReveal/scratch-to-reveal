@@ -11,9 +11,6 @@ function isLeftClick(event) {
 class VenueReveal {
     constructor(previewImg, bkgdImg, height, width, caption) {
         const self = this;
-
-        this.ready = false;
-        this.eventId = `e${Math.random()}`;
         
         this.container = document.createElement("figure");
         this.container.className = "venue";
