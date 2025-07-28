@@ -23,13 +23,6 @@ class VenueReveal {
         this.revealCard.style.backgroundImage = `url('${bkgdImg}')`;
         this.revealCard.height = height;
         this.revealCard.width = width;
-        this.container.appendChild(this.revealCard);
-
-        if (caption) {
-            this.venueCaption = document.createElement("figcaption");
-            this.venueCaption.innerText = caption;
-            this.container.appendChild(this.venueCaption);
-        }
 
         // can try changing this brush size
         this.brushRadius = Math.max(50, (this.revealCard.width / 100) * 5);
@@ -39,8 +32,13 @@ class VenueReveal {
         this.coverImage.addEventListener("load", () => {  
             let bridgeCanvas = self.revealCard.getContext("2d");
             bridgeCanvas.drawImage(self.coverImage, 0, 0, self.revealCard.width, self.revealCard.height);
-            self.ready = true;
-            window.dispatchEvent(new Event(self.eventId));
+            self.container.appendChild(self.revealCard);
+
+            if (caption) {
+                let venueCaption = document.createElement("figcaption");
+                venueCaption.innerText = caption;
+                self.container.appendChild(this.venueCaption);
+            }
         });
 
         this.revealCard.addEventListener("mousemove", function(e) {
@@ -61,15 +59,7 @@ class VenueReveal {
     }
 
     attach(parent) {
-        const self = this;
-        if (this.ready) {
-            parent.appendChild(self.container);
-        }
-        else {
-            window.addEventListener(this.eventId, () => {
-                parent.appendChild(self.container);
-            }, false);
-        }
+        parent.appendChild(this.container);
     }
     
     getBrushPos(xRef, yRef) {
