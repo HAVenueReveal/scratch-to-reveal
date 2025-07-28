@@ -1,3 +1,29 @@
+class VenueReveal {
+    constructor(previewImg, bkgdImg, height, width, caption) {
+        this.previewImg = previewImg;
+        this.bkgdImg = bkgdImg;
+        this.caption = caption;
+        
+        this.container = document.createElement("figure");
+        this.container.setClass("venue");
+
+        this.revealCard = document.createElement("canvas");
+        this.revealCard.setClass("venue-card");
+        this.revealCard.height = height;
+        this.revealCard.width = width;
+
+        this.venueCaption = document.createElement("figcaption");
+        this.venueCaption.innerText = caption;
+
+        this.container.appendChild(revealCard);
+        this.container.appendChild(venueCaption);
+    }
+
+    attach(parent) {
+        parent.appendChild(this.container);
+    }
+}
+// canvas element
 var bridge = document.getElementById("bridge"),
 bridgeCanvas = bridge.getContext('2d'),
 brushRadius = (bridge.width / 100) * 5,
@@ -37,18 +63,18 @@ function drawDot(mouseX,mouseY){
 }
 
 bridge.addEventListener("mousemove", function(e) {
-	var brushPos = getBrushPos(e.clientX, e.clientY);
-  var leftBut = detectLeftButton(e);
-  if (leftBut == 1) {
-		drawDot(brushPos.x, brushPos.y);
-  }
+    var leftBut = detectLeftButton(e);
+    if (leftBut == 1) {
+        var brushPos = getBrushPos(e.clientX, e.clientY);
+        drawDot(brushPos.x, brushPos.y);
+    }
 }, false);
 
 bridge.addEventListener("touchmove", function(e) {
     e.preventDefault();
     var touch = e.targetTouches[0];
     if (touch) {
-    var brushPos = getBrushPos(touch.pageX, touch.pageY);
+        var brushPos = getBrushPos(touch.pageX, touch.pageY);
         drawDot(brushPos.x, brushPos.y);
     }
 }, false);
