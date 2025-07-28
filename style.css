@@ -1,21 +1,23 @@
 body { margin: 0; }
 
-#bridge {
+.venue-card {
 	display: block;
 	margin: 0 auto;
-  background-image: url('FortedeCruzReveal.jpg');
-	background-image: -webkit-image-set(url('FortedeCruzReveal.jpg') 1x, url('FortedeCruzReveal.jpg') 2x );
 	background-size: cover;
 	width: 100%;
 	max-width: 750px;
 	height: auto;
-  cursor:  crosshair;
-  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/circular-cursor.png) 53 53, crosshair;
+/* 	cursor:  crosshair; */
+	cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/circular-cursor.png) 53 53, crosshair;
+/* 	background-image: url('FortedeCruzReveal.jpg'); */
+	background-image: -webkit-image-set(
+		url('FortedeCruzReveal.jpg') 1x, 
+		url('FortedeCruzReveal.jpg') 2x);
 }
-#bridgeContainer { 
-  text-align: center;
-  font-family: Avenir, sans-serif;
+.venue { 
+	text-align: center;
+	font-family: Avenir, sans-serif;
 }
-#bridgeContainer figcaption {   
-  margin-top: 2rem; 
+.venue figcaption {   
+	margin-top: 2rem; 
 }
